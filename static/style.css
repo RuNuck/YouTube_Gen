@@ -7,7 +7,6 @@ body {
     align-items: center;
     height: 100vh; /* viewport height, to make the body take up the full screen */
     margin: 0; /* to remove default body margin */
-    
 }
 
 .navbar {
@@ -48,5 +47,17 @@ button {
 input[type="submit"]:hover,
 button:hover {
     background-color: #0056b3;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+        height: auto;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
 }
 /* END: Custom Styles */
