@@ -1,0 +1,68 @@
+<!-- FILEPATH: /e:/webstuff/Illinois/YouTube_Gen/templates/error.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type='text/css' href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        /* BEGIN: Added CSS for video */
+        video {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin-top: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        /* END: Added CSS for video */
+    </style>
+</head>
+<div>
+    <nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" href="/">RuNuck</a>
+    </nav>
+</div>
+<body>
+    <div class="container">
+        <h1>WORK IN PROGRESS</h1>
+        <video width="320" height="240" controls>
+            <source src="{{ url_for('static', filename='video.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</body>
+</html>
