@@ -1,8 +1,26 @@
 from flask import Flask, render_template, request, redirect, url_for
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
+from flask_talisman import Talisman
 import re
 
+csp = {
+    'default-src': [
+        '\'self\'',
+        'stackpath.bootstrapcdn.com',
+        'code.jquery.com',
+        'cdnjs.cloudflare.com',
+    ],
+    'style-src': [
+        '\'self\'',
+        '\'unsafe-inline\'',
+        'stackpath.bootstrapcdn.com',
+    ]
+}
+
 app = Flask(__name__)
+Talisman(app,content_security_policy=csp)
+
+
 
 @app.route('/')
 def index():
