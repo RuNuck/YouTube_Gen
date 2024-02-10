@@ -1,0 +1,57 @@
+<!-- FILEPATH: /e:/webstuff/Illinois/YouTube_Gen/templates/error.html -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type='text/css' href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Error</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+            
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        p {
+            color: #666;
+            font-size: 16px;
+            text-align: center;
+        }
+
+        /* BEGIN: Added CSS */
+        .container {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        /* END: Added CSS */
+    </style>
+</head>
+<div>
+    <nav class="navbar navbar-expand-lg fixed-top">
+    <a class="navbar-brand" href="/">RuNuck</a>
+    </nav>
+</div>
+<body>
+    <!-- BEGIN: Added container div -->
+    <div class="container">
+        <h1>An error occurred</h1>
+        <p>Please contact the organization for assistance.</p>
+    </div>
+    <!-- END: Added container div -->
+</body>
+</html>

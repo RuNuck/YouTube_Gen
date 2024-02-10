@@ -6,13 +6,16 @@
     <title>Video Page</title>
     <!-- Include Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg">
+<div>
+    <nav class="navbar navbar-expand-lg fixed-top">
         <a class="navbar-brand" href="/">RuNuck</a>
     </nav>
+</div>
+<body>
+    
     <div class="container">
         <div class="row">
             <div class="col-lg-8 offset-lg-2">

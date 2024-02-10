@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from transformers import GPT2LMHeadModel, GPT2Tokenizer
+import re
 
 app = Flask(__name__)
 
@@ -16,12 +17,10 @@ def submit():
 def result(topic):
     return render_template('result.html', topic=topic)
 
-from transformers import GPT2LMHeadModel, GPT2Tokenizer
-
 @app.route('/video/<topic>/generate', methods=['POST'])
 def generate(topic):
     if request.method == 'POST':
-        topic = request.form['topic']
+        topic = sanitize_input(request.form['topic'])
         print(topic)
 
         # Generate script
@@ -43,12 +42,20 @@ def video(topic):
 
 @app.route('/generate_video', methods=['POST'])
 def generate_video():
-    topic = request.form.get('topic')
+    topic = sanitize_input(request.form.get('topic'))
+    
+    if not topic:
+        return render_template('error.html', message='Invalid input')
+    
     # Now you can use the 'topic' variable to generate a video
     # ...
 
     return render_template('result.html', topic=topic)
 
+def sanitize_input(input_string):
+    # Remove any non-alphanumeric characters from the input string
+    sanitized_string = re.sub(r'\W+', '', input_string)
+    return sanitized_string
+
 if __name__ == '__main__':
     app.run(debug=True)
-
